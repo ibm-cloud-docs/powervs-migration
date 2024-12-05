@@ -1,0 +1,30 @@
+#  Name your file `toc.yaml`
+#  Make sure you include all nav file coding requirements, as defined in https://test.cloud.ibm.com/docs-internal/writing?topic=writing-code-nav
+#  Anything with a fully qualified URL with `http` or `https` will get an external link icon added to the nav entry
+---
+toc:
+  properties:
+    subcollection: powervs-migration
+    industry: FinancialSector,Banking,Insurance,Healthcare,Industrials
+    use-case: ApplicationMigration,ApplicationModernization
+    compliance: GDPR,CCPA,LGPD,ISOIEC27001,ISOIEC27017,ISOIEC27018,SOC1,SOC2,PCIDSS,HIPAA,IBMCloudFFS
+    audience: solution
+    category: solution_docs
+    content-type: white-paper
+    navigation: hidden
+    href: /docs/powervs-migration
+    path: powervs-migration
+    label: White paper title
+    description: 128 characters or less. The description should expand upon the name, but don't add extra marketese words that inflate the length. Focus on keywords that users would be skimming and/or searching for, including any key IBM branded terms covered in the white paper.
+    authors:
+    - name: Yichong Yu
+      title: STSM, IBM Cloud for Financial Services
+    - name: Joseph Kiernan
+      title: Technical Solution Architect
+    - name: Jose Ocasio
+      title: Technical Solution Architect - IBM Cloud Complex Solutions
+  entries:
+  - navgroup:
+      id: overview
+      topics:
+      - white-paper.md
