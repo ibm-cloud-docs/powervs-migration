@@ -5,9 +5,9 @@
 toc:
   properties:
     subcollection: powervs-migration
-    industry: FinancialSector,Banking,Insurance,Healthcare,Industrials
-    use-case: ApplicationMigration,ApplicationModernization
-    compliance: GDPR,CCPA,LGPD,ISOIEC27001,ISOIEC27017,ISOIEC27018,SOC1,SOC2,PCIDSS,HIPAA,IBMCloudFFS
+    industry: FinancialSector
+    use-case: ApplicationMigration
+    compliance: IBMCloudFFS
     audience: solution
     category: solution_docs
     content-type: white-paper
