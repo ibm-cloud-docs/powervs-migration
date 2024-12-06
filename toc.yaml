@@ -19,10 +19,13 @@ toc:
     authors:
     - name: Yichong Yu
       title: STSM, IBM Cloud for Financial Services
+      url: https://www.linkedin.com
     - name: Joseph Kiernan
       title: Technical Solution Architect
+      url: https://www.linkedin.com
     - name: Jose Ocasio
       title: Technical Solution Architect - IBM Cloud Complex Solutions
+      url: https://www.linkedin.com
   entries:
   - navgroup:
       id: overview
