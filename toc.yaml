@@ -14,8 +14,8 @@ toc:
     navigation: hidden
     href: /docs/powervs-migration
     path: powervs-migration
-    label: White paper title
-    description: 128 characters or less. The description should expand upon the name, but don't add extra marketese words that inflate the length. Focus on keywords that users would be skimming and/or searching for, including any key IBM branded terms covered in the white paper.
+    label: Migration to Power Virtual Server on IBM Cloud
+    description: This whitepaper provides prescriptive solution choices to move Power workloads to Power Virtual Server on IBM Cloud.
     authors:
     - name: Yichong Yu
       title: STSM, IBM Cloud for Financial Services
