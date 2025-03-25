@@ -221,13 +221,12 @@ This method is cost-effective because it leverages existing native AIX tools, el
 
 In terms of time efficiency, this approach minimizes downtime through a streamlined backup and restore process. The mksysb command creates a comprehensive system backup in one go, reducing the complexity and time required for data transfer. Similarly, the savevg command ensures that additional volume group data is backed up efficiently. Transferring these backups via cloud storage expedites the migration process, ensuring a quick and seamless transition. This approach ensures business continuity with minimal disruption, making it a practical and efficient solution for migrating AIX workloads to PowerVS.
 
-**Benefits** 
-
-  * Comprehensive Backup and Recovery: Ensures full system protection by backing up the entire root volume group (rootvg) and additional volume groups, capturing all necessary data and configurations.
-  * Cost-Effectiveness: Utilizes built-in AIX tools with no additional software costs and takes advantage of cloud storage and the pay-as-you-go pricing model of PowerVS to reduce overall costs.
-  * Time Efficiency: Streamlines the migration process with comprehensive system backups and efficient data transfer,minimizing downtime and ensuring a quick transition.
-  * Flexibility and Scalability: Offers tailored backups for specific system components and scalable resources to meet changing workload demands, optimizing the migration process.
-  * Enhanced Data Integrity and Security: Maintains data integrity with accurate replication of the entire system and secure data transfer using cloud storage.
+**Benefits**
+  * **Comprehensive Backup and Recovery:** Ensures full system protection by backing up the entire root volume group (rootvg) and additional volume groups, capturing all necessary data and configurations.
+  * **Cost-Effectiveness:** Utilizes built-in AIX tools with no additional software costs and takes advantage of cloud storage and the pay-as-you-go pricing model of PowerVS to reduce overall costs.
+  * **Time Efficiency:** Streamlines the migration process with comprehensive system backups and efficient data transfer,minimizing downtime and ensuring a quick transition.
+  * **Flexibility and Scalability:** Offers tailored backups for specific system components and scalable resources to meet changing workload demands, optimizing the migration process.
+  * **Enhanced Data Integrity and Security:** Maintains data integrity with accurate replication of the entire system and secure data transfer using cloud storage.
 
 **Limitations**
 
@@ -292,38 +291,42 @@ By using mksysb and savevg, XYZ Corporation successfully migrated their AIX work
 ## Migration IBM i to IBM Cloud
 {: #4-migration-ibmi}
 
-IBM i Decision Trees
+**IBM i Decision Tree**
 
-There are a number of options for migrating I series from on premise to PowerVS on IBM cloud
-1.	FalconStorVTL
-2.	Operating System level backup and restore
-3.	Host/Operating System mirroring using PowerHA with geographic mirroring
-4.	Application level replication for example  DB2, Oracle, SAP
-5.	Logical replication using 3rd party software for example Mimix 
-Note: Discuss the options in the decision tree
-Backup and Migration using FalconStor VTL
+![IBMi migration decision tree](/images/ibmimigration.svg "Reference Summary"){: caption="{{site.data.keyword.powerSysFull}} IBMi decision tree" caption-side="bottom"}{: external download="ibmimigration.svg"}
+
+There are a number of options for migrating IBMi series from on premise to PowerVS on IBM cloud
+* FalconStorVTL
+* Operating System level backup and restore
+* Host/Operating System mirroring using PowerHA with geographic mirroring
+* Application level replication for example  DB2, Oracle, SAP
+* Logical replication using 3rd party software for example Mimix
+
+**Backup and Migration using FalconStor VTL**
+
 For images over 2 TB, it is recommended that organizations utilize FalconStor Storsafe VTL appliances to deduplicate and minimize the data transfer to the cloud. Images less than 2 TB can be transferred to IBM Cloud Object Storage using IBM Backup, Recovery, and Media Services (BRMS) and IBM Cloud Storage Solution (ICC)  IBM Cloud Direct Link is the preferred option, as it seamlessly connects on-premises resources to IBM Cloud, and provides a consistent, high-throughput connectivity without using the public internet.
 
-Operating System level backup and restore
+**Operating System level backup and restore**
 Both the SAVSYS and GO SAVE commands can be used to backup the IBM i operating system
 The GO SAVE command includes multiple options, three of which are discussed in this paper:
 
-•	Menu option 21: makes a backup of the entire system
-•	Menu option 22: makes a backup of all system data
-•	Menu option 23: makes a backup of all user data
+*	Menu option 21: makes a backup of the entire system
+*	Menu option 22: makes a backup of all system data
+*	Menu option 23: makes a backup of all user data
 
 Geographic mirroring can be utilized to migrate a host and operating system from an on-premises location to PowerVS in IBM Cloud. Geographic mirroring occurs when all data in one environment is mirrored to a second location.  There is both a synchronous and asynchronous version of geographic mirroring. Synchronous geographic mirroring over a distance may impact application performance due to communication latency.
 
-Application level replication
+![Geographic mirror](/images/geomirror.svg "Reference Summary"){: caption="{{site.data.keyword.powerSysFull}} Geopgraphic Mirror" caption-side="bottom"}{: external download="geomirror.svg"}
+
+**Application level replication**
 A number of applications commonly deployed on Power have built in replication capabilities: 
- DB2 HADR:  https://www.ibm.com/docs/en/db2/11.5?topic=server-high-availability-disaster-recovery-hadr
-Oracle Dataguard:  https://www.oracle.com/ie/database/data-guard/
-SAP HANA on prem to cloud  https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/migrate-sap-hana-on-premise-database-to-sap-hana-cloud
+* [DB2 HADR](https://www.ibm.com/docs/en/db2/11.5?topic=server-high-availability-disaster-recovery-hadr){: external}
+* [Oracle Dataguard](https://www.oracle.com/ie/database/data-guard/){: external}
+* [SAP HANA on prem to cloud](https://help.sap.com/docs/hana-cloud/sap-hana-cloud-migration-guide/migrate-sap-hana-on-premise-database-to-sap-hana-cloud){: external}
 
 Logical replication using 3rd party software
-Mimix: 
- Rocket iCluster: Logical replication software that runs on Power systems running IBM i. iCluster uses journaling to provide high availability and disaster recovery for business applications and enables almost continuous access through real-time monitoring, notifying, and self-correcting replication.
-https://www.rocketsoftware.com/products/rocket-icluster/resources
+  * [Assure MIMIX (from Precisely)](https://www.precisely.com/product/precisely-assure/assure-mimix){: external}: A high availability (HA) and disaster recovery (DR) solution for IBM i, but it’s also widely used to support migrations — especially when businesses want minimal or near-zero downtime.
+  * [Rocket iCluster](https://www.rocketsoftware.com/products/rocket-icluster/resources){: external}: Logical replication software that runs on Power systems running IBM i. iCluster uses journaling to provide high availability and disaster recovery for business applications and enables almost continuous access through real-time monitoring, notifying, and self-correcting replication.
 RobotHA:
 
 
@@ -331,51 +334,63 @@ Case studies
 
 
 
-Case Study: Migrating IBM i Workloads from On-Premises to IBM Power Virtual Server Using FalconStor VTL
-Client Overview: LMN Healthcare, a medium-sized healthcare provider, relies on IBM i systems for critical applications such as patient management, billing, and electronic health records. To enhance scalability, performance, and reduce operational costs, LMN Healthcare decided to migrate their IBM i workloads from their on-premises data center to IBM Power Virtual Server (PowerVS).
-Challenges:
-•	Regulatory Compliance: The healthcare industry has strict data protection regulations. Ensuring compliance during the migration was crucial.
-•	Data Volume: The sheer volume of patient records and historical data posed a significant challenge for migration.
-•	Legacy Systems Integration: Some older systems needed to be integrated seamlessly with the new cloud environment to maintain operational continuity.
-Solution: To address these challenges, LMN Healthcare implemented a migration strategy leveraging FalconStor's StorSafe Virtual Tape Library (VTL) to ensure an efficient, secure, and seamless transition to PowerVS.
-Migration Process:
-1. Preparation:
-•	Assessment: Conducted a thorough assessment of the existing IBM i environment, identifying all critical applications, data, and dependencies.
-•	Set Up PowerVS: Provisioned the target environment in IBM PowerVS, ensuring it was configured to match the specifications of the on-premises IBM i systems.
-2. Creating Backups:
-•	Virtual Tape Creation: Utilized FalconStor's StorSafe VTL to create virtual tape backups of the IBM i systems. This included full system backups and incremental backups of critical data.
-•	Deduplication: FalconStor's built-in deduplication technology minimized the amount of data transferred, reducing both time and resource requirements.
-3. Transferring Backups:
-•	Secure Transfer: Transferred the virtual tape backups to IBM Cloud Object Storage using secure transfer methods to ensure data security and integrity. FalconStor's VTL ensured efficient and secure data transfer.
-4. Restoring Backups on PowerVS:
-•	Provisioning VSI: Created new Virtual Server Instances (VSIs) in PowerVS to replicate the on-premises IBM i environment.
-•	Restoration Process: Used the virtual tape backups to restore the IBM i systems on the new VSIs, re-establishing the operating system, applications, and data.
-5. Testing and Validation:
-•	System Verification: Verified that the restored environment in PowerVS matched the on-premises setup, with all configurations and data intact.
-•	Application Testing: Conducted extensive testing of critical healthcare applications to ensure functionality and performance in the new environment.
-6. Final Cutover:
-•	Data Synchronization: Ensured the latest data changes were synchronized between the on-premises system and PowerVS.
-•	Production Cutover: Transitioned production operations to the new PowerVS environment, minimizing downtime and ensuring continuous availability.
-7. Post-Migration Monitoring:
-•	Continuous Monitoring: Implemented monitoring tools to ensure the new environment operated smoothly and addressed any issues promptly.
-•	Ongoing Optimization: Continued to optimize performance and scalability to meet future business needs.
-Results:
-Cost Savings:
-•	Reduced Infrastructure Costs: By migrating to PowerVS, LMN Healthcare significantly reduced the costs associated with maintaining and upgrading on-premises hardware.
-•	Optimized Resource Utilization: Leveraged the pay-as-you-go model of PowerVS to optimize operational costs and resource utilization.
-Operational Efficiency:
-•	Minimal Downtime: The migration process was executed with minimal downtime, ensuring continuous availability of healthcare services.
-•	Enhanced Performance: The new PowerVS environment provided improved performance and scalability to meet the growing demands of healthcare operations.
+**Case Study: Migrating IBM i Workloads from On-Premises to IBM Power Virtual Server Using FalconStor VTL**
+
+**Client Overview:** LMN Healthcare, a medium-sized healthcare provider, relies on IBM i systems for critical applications such as patient management, billing, and electronic health records. To enhance scalability, performance, and reduce operational costs, LMN Healthcare decided to migrate their IBM i workloads from their on-premises data center to IBM Power Virtual Server (PowerVS).
+
+**Challenges:**
+  * **Regulatory Compliance:** The healthcare industry has strict data protection regulations. Ensuring compliance during the migration was crucial.
+  * **Data Volume:** The sheer volume of patient records and historical data posed a significant challenge for migration.
+  * **Legacy Systems Integration:** Some older systems needed to be integrated seamlessly with the new cloud environment to maintain operational continuity.
+
+**Solution:** To address these challenges, LMN Healthcare implemented a migration strategy leveraging FalconStor's StorSafe Virtual Tape Library (VTL) to ensure an efficient, secure, and seamless transition to PowerVS.
+
+**Migration Process:**
+1. **Preparation:**
+    * **Assessment:** Conducted a thorough assessment of the existing IBM i environment, identifying all critical applications, data, and dependencies.
+    * **Set Up PowerVS:** Provisioned the target environment in IBM PowerVS, ensuring it was configured to match the specifications of the on-premises IBM i systems.
+2. **Creating Backups:**
+    * **Virtual Tape Creation:** Utilized FalconStor's StorSafe VTL to create virtual tape backups of the IBM i systems. This included full system backups and incremental backups of critical data.
+    * **Deduplication:** FalconStor's built-in deduplication technology minimized the amount of data transferred, reducing both time and resource requirements.
+3. **Transferring Backups:**
+    * **Secure Transfer:** Transferred the virtual tape backups to IBM Cloud Object Storage using secure transfer methods to ensure data security and integrity. FalconStor's VTL ensured efficient and secure data transfer.
+4. **Restoring Backups on PowerVS:**
+    * **Provisioning VSI:** Created new Virtual Server Instances (VSIs) in PowerVS to replicate the on-premises IBM i environment.
+    * **Restoration Process:** Used the virtual tape backups to restore the IBM i systems on the new VSIs, re-establishing the operating system, applications, and data.
+5. **Testing and Validation:**
+    * **System Verification:** Verified that the restored environment in PowerVS matched the on-premises setup, with all configurations and data intact.
+    * **Application Testing:** Conducted extensive testing of critical healthcare applications to ensure functionality and performance in the new environment.
+6. **Final Cutover:**
+    * **Data Synchronization:** Ensured the latest data changes were synchronized between the on-premises system and PowerVS.
+    * **Production Cutover:** Transitioned production operations to the new PowerVS environment, minimizing downtime and ensuring continuous availability.
+7. **Post-Migration Monitoring:**
+    * **Continuous Monitoring:** Implemented monitoring tools to ensure the new environment operated smoothly and addressed any issues promptly.
+    *	**Ongoing Optimization:** Continued to optimize performance and scalability to meet future business needs.
+
+**Results:**
+**Cost Savings:**
+  *	Reduced Infrastructure Costs: By migrating to PowerVS, LMN Healthcare significantly reduced the costs associated with maintaining and upgrading on-premises hardware.
+  * Optimized Resource Utilization: Leveraged the pay-as-you-go model of PowerVS to optimize operational costs and resource utilization.
+
+**Operational Efficiency:**
+  * **Minimal Downtime:** The migration process was executed with minimal downtime, ensuring continuous availability of healthcare services.
+  * **Enhanced Performance:** The new PowerVS environment provided improved performance and scalability to meet the growing demands of healthcare operations.
 Data Integrity and Security:
-•	Accurate Replication: FalconStor's VTL ensured accurate replication of the entire system and all data, maintaining data integrity throughout the migration process.
-•	Secure Transfer: Data was securely transferred and protected throughout the migration process.
+  * **Accurate Replication:** FalconStor's VTL ensured accurate replication of the entire system and all data, maintaining data integrity throughout the migration process.
+  * **Secure Transfer:** Data was securely transferred and protected throughout the migration process.
+
 By leveraging FalconStor's StorSafe VTL, LMN Healthcare successfully migrated their IBM i workloads to IBM Power Virtual Server. The migration resulted in significant cost savings, enhanced performance, and improved operational efficiency, ensuring a seamless and reliable transition to the cloud.
 
-Overview of Performance Metrics and Their Importance in Migrations
+**Overview of Performance Metrics and Their Importance in Migrations**
+
 When planning migrations, understanding key performance metrics is crucial for making informed decisions and ensuring a smooth transition. Three primary metrics used to evaluate the performance of IBM systems are rPerf (Relative Performance), SPECjbb2015 (Standard Performance Evaluation Corporation Java Business Benchmark 2015), and CPW (Commercial Processing Workload). Each of these metrics serves a specific purpose, helping to compare system capabilities, plan capacities, and ensure that new systems can handle existing workloads efficiently.
-rPerf is a benchmark used to estimate the performance of IBM Power Systems servers relative to a baseline system. This metric allows for straightforward comparison between different systems, ensuring the new system can manage current workloads during migrations. You can find the latest IBM Power Performance Report, which includes rPerf values, on the IBM website. Here is the direct link to the most recent report:  IBM Power Performance Report
-SPECjbb2015 evaluates the performance of server-side Java applications, particularly useful for Linux workloads on Power Systems. It measures throughput and response times, providing valuable insights into how well a system can handle Java-based applications, which is critical for capacity planning and system selection.
-CPW measures the processing power of IBM i systems in terms of commercial transactions per second. This metric is essential for assessing the capacity needed for IBM i workloads, ensuring the target system can meet the expected load and future demands.
+
+**RPerf** is a benchmark used to estimate the performance of IBM Power Systems servers relative to a baseline system. This metric allows for straightforward comparison between different systems, ensuring the new system can manage current workloads during migrations. You can find the latest IBM Power Performance Report, which includes rPerf values, on the IBM website. Here is the direct link to the most recent report:  [IBM Power Performance Report](https://www.ibm.com/downloads/documents/us-en/10c31775c5d40fed){: external}
+
+**SPECjbb2015** evaluates the performance of server-side Java applications, particularly useful for Linux workloads on Power Systems. It measures throughput and response times, providing valuable insights into how well a system can handle Java-based applications, which is critical for capacity planning and system selection.
+
+**CPW** measures the processing power of IBM i systems in terms of commercial transactions per second. This metric is essential for assessing the capacity needed for IBM i workloads, ensuring the target system can meet the expected load and future demands.
+
 These metrics are vital in migrations as they offer standardized benchmarks to compare system performance, aiding in capacity planning, cost-benefit analysis, and risk mitigation. They ensure the new system meets performance requirements, reducing downtime and maintaining operational efficiency.
 
 
@@ -383,7 +398,7 @@ These metrics are vital in migrations as they offer standardized benchmarks to c
 ## Summary
 {: #5-summary}
 
-content
+Migrating IBM Power workloads to IBM Power Virtual Server on IBM Cloud enables organizations to overcome the limitations of traditional on-prem infrastructure by gaining scalability, performance, and cost-efficiency. With multiple migration strategies—ranging from native backup and restore to advanced real-time replication—businesses can choose the approach that best fits their environment, downtime tolerance, and goals. IBM PowerVS offers a secure, flexible, and familiar platform that simplifies cloud adoption while maintaining workload continuity. By leveraging the tools, services, and best practices outlined in this white paper, organizations can execute a smooth, low-risk transition to the cloud and position themselves for future growth.
 
 ## References
 {: #6-references}
