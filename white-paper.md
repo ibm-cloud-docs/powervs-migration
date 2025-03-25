@@ -77,7 +77,6 @@ With flexible pay-as-you-go model, client only pays for what they use. This not 
 **Smooth transition to cloud**
 
 IBM Power Virtual Server has the same architecture in a cloud environment as IBM Power on-premises. It supports AIX, IBM i, Linux and OpenShift, and is certified for SAP and Oracle workloads, allowing a smooth transition for businesses already using IBM Power systems to cloud.
-
   * **Improved platform availability:** The accelerated shift to a digital economy, partly due to the Covid pandemic, along increased business demand for higher availability of production critical applications requires greater platform availability of 99.99+%.
 
   * **Security:** Business requires secure the software supply chain for both intellectual capital (asset) protection and certified untampered code. The number and cost of cyber-attacks has greatly escalated in recent years. This has caused businesses to take a more disciplined approach to system and data security. End to end encryption is needed to secure business data and encryption key management has taken on increased importance. On IBM Cloud, businesses have options to use IBM provided keys or can bring their own encryption keys (BYOK).  With Hyper Protect Crypto Services (HPCS), IBM Cloud offers a unique solution which allows a business to keep their own keys (KYOK) on a dedicated key management service and Hardware Security Module.  Ransomware, cyber-attacks and other security related issues added the business requirement of a minimum viable company (MVC) platform solution.
@@ -265,24 +264,28 @@ Figure 1 -AIX  mksysb
     * **Restoring mksysb Backup:** Used the mksysb backup to restore the rootvg on the new VSI, setting up the base system environment.
     * **Restoring savevg Backups:** Applied the restvg command to restore the additional volume groups from the savevg backups, ensuring all data and configurations were replicated accurately.
 5. **Testing and Validation:**
-    * System Verification: Verified that the restored system on PowerVS matched the on-premises environment, with all configurations and data intact.
-    *	Application Testing: Conducted thorough testing of critical applications to ensure they functioned correctly in the new environment.
+    * **System Verification:** Verified that the restored system on PowerVS matched the on-premises environment, with all configurations and data intact.
+    *	**Application Testing:** Conducted thorough testing of critical applications to ensure they functioned correctly in the new environment.
 6. **Final Cutover:** 
-    *	Data Synchronization: Ensured the latest data changes were synchronized between the on-premises system and PowerVS.
-    * Production Cutover: Switched production operations to the new environment on PowerVS, with minimal disruption to business processes.
+    *	**Data Synchronization:** Ensured the latest data changes were synchronized between the on-premises system and PowerVS.
+    * **Production Cutover:** Switched production operations to the new environment on PowerVS, with minimal disruption to business processes.
 7. **Post-Migration Monitoring:**
-    * Continuous Monitoring: Implemented monitoring tools to ensure the new environment operated smoothly and addressed any issues promptly.
+    * **Continuous Monitoring:** Implemented monitoring tools to ensure the new environment operated smoothly and addressed any issues promptly.
 
-Results:
-Cost Savings:
-•	Reduced Infrastructure Costs: By moving to PowerVS, XYZ Corporation reduced the costs associated with maintaining and upgrading on-premises hardware.
-•	Optimized Resource Utilization: Leveraging the pay-as-you-go model of PowerVS optimized operational costs.
-Operational Efficiency:
-•	Minimal Downtime: The streamlined migration process ensured minimal disruption to manufacturing operations.
-•	Enhanced Performance: The new cloud environment provided better performance and scalability to meet growing data needs.
-Data Integrity and Security:
-•	Accurate Replication: The use of mksysb and savevg ensured accurate replication of the entire system and all data.
-•	Secure Transfer: Data was securely transferred and protected during the migration process.
+**Results:**
+
+**Cost Savings:**
+  * **Reduced Infrastructure Costs:** By moving to PowerVS, XYZ Corporation reduced the costs associated with maintaining and upgrading on-premises hardware.
+  * **Optimized Resource Utilization:** Leveraging the pay-as-you-go model of PowerVS optimized operational costs.
+
+**Operational Efficiency:**
+  *	**Minimal Downtime:** The streamlined migration process ensured minimal disruption to manufacturing operations.
+  * **Enhanced Performance:** The new cloud environment provided better performance and scalability to meet growing data needs.
+
+**Data Integrity and Security:**
+  * **Accurate Replication:** The use of mksysb and savevg ensured accurate replication of the entire system and all data.
+  * **Secure Transfer:** Data was securely transferred and protected during the migration process.
+
 By using mksysb and savevg, XYZ Corporation successfully migrated their AIX workloads to IBM Power Virtual Server, achieving a seamless transition with significant cost savings and improved operational efficiency.
 
 
