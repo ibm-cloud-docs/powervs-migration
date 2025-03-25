@@ -16,7 +16,7 @@ subcollection: powervs-migration
 # Migration to Power Virtual Server on IBM Cloud
 {: #white-paper}
 
-This whitepaper describes the business challenges with On Premise and Co-Located Power workloads and provides prescriptive solution choices to move the platform to Power Virtual Server on IBM Cloud. The  many design considerations involved in making this determination and the migration approach  are described in this paper.
+This whitepaper describes the business challenges with On Premise and Co-Located Power workloads and provides prescriptive solution choices to move the platform to  {{site.data.keyword.powerSys_notm}} on IBM Cloud. The  many design considerations involved in making this determination and the migration approach  are described in this paper.
 {: shortdesc}
 
 
