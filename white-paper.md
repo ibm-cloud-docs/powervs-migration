@@ -74,7 +74,7 @@ IBM makes constant innovations on the Power processors, and push out a newer ver
 
 * **Security:** Business requires secure the software supply chain for both intellectual capital (asset) protection and certified untampered code. The number and cost of cyber-attacks has greatly escalated in recent years. This has caused businesses to take a more disciplined approach to system and data security. End to end encryption is needed to secure business data and encryption key management has taken on increased importance. On IBM Cloud, businesses have options to use IBM provided keys or can bring their own encryption keys (BYOK).  With {{site.data.keyword.hscrypto}} (HPCS), IBM Cloud offers a unique solution which allows a business to keep their own keys (KYOK) on a dedicated key management service and Hardware Security Module.  Ransomware, cyber-attacks and other security related issues added the business requirement of a minimum viable company (MVC) platform solution.
 
-* **Sustainability** 
+* **Sustainability**
 
 IT agility is key to business success today. Businesses need scalable and elastic environments.  Cloud platforms enable this capability and IBM Cloud provides automation for the {{site.data.keyword.powerSys_notm}} platform to further enhance this agility. Integration with other IBM Cloud services provide insights to clouds usage and facilitate auditing and control.
 
@@ -228,9 +228,9 @@ In terms of time efficiency, this approach minimizes downtime through a streamli
 **Client Overview:** XYZ Corporation, a mid-sized manufacturing company, relies heavily on AIX systems for its critical business operations, including ERP and supply chain management. With growing data needs and an aging on-premises infrastructure, XYZ Corporation decided to migrate their AIX workloads to IBM {{site.data.keyword.powerSys_notm}} to leverage the cloud's scalability, performance, and cost efficiencies.
 
 **Challenges:**
-  *	Aging Infrastructure: XYZ Corporation's on-premises hardware was reaching end-of-life, increasing the risk of hardware failures and downtime.
-  * Data Integrity: Ensuring the integrity of critical data during the migration process was paramount.
-  * Minimal Downtime: The manufacturing processes could not afford significant downtime, necessitating a seamless transition.
+ *	Aging Infrastructure: XYZ Corporation's on-premises hardware was reaching end-of-life, increasing the risk of hardware failures and downtime.
+ * Data Integrity: Ensuring the integrity of critical data during the migration process was paramount.
+ * Minimal Downtime: The manufacturing processes could not afford significant downtime, necessitating a seamless transition.
 
 **Solution:** To address these challenges, XYZ Corporation chose to use the mksysb and savevg commands for a comprehensive and efficient migration strategy.
 
