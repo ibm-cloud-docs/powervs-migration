@@ -95,7 +95,7 @@ This document outlines the migration considerations, proposes migration strategi
 * **Disaster Recovery:** Implement robust disaster recovery solutions with IBM Cloud's resilience.
 
 
-### Use cases for {{site.data.keyword.powerSys_notm}} on IBM Cloud
+### Use cases for {{site.data.keyword.powerSys_notm}} AIX/Linux on IBM Cloud
 {: #1-3-usecases}
 
 IBM {{site.data.keyword.powerSys_notm}} is a family of configurable multi-tenant virtual IBM Power servers with access to IBM Cloud services. It supports AIX, IBM i, Linux and OpenShift, and is certified for SAP and Oracle workloads. It has exactly the same stack as IBM Power on-premises and provides clients with a consistent experience.
@@ -113,8 +113,6 @@ Companies can enhance resilience by backing up their data to the cloud, ensuring
 **Modernization**
 
 IBM {{site.data.keyword.powerSys_notm}} resources reside in IBM data centers with dedicated networking and Storage area network (SAN)-attached Fibre Channel storage. The internal networks are fenced but offer connectivity options to IBM Cloud infrastructure or private cloud environments. This infrastructure design enables {{site.data.keyword.powerSys_notm}} to maintain key enterprise software certification and support as the {{site.data.keyword.powerSys_notm}} architecture is identical to certified private cloud infrastructure. It also enables IBM {{site.data.keyword.powerSys_notm}} to connect to over 190 IBM Cloud services seamlessly. Companies can utilize cloud services to modernize applications by enhancing scalability, integrating advanced tools, and enabling seamless updates. This approach supports faster innovation, improves performance, and ensures your applications are equipped to meet evolving business demands.
-
-
 
 ## Migration process
 {: #2-migration-process}
@@ -171,7 +169,7 @@ Decision tree:
     * Security and compliance ({{site.data.keyword.compliance_short}}, LogDNA, monitoring)
 
 
-## Migration AIX/Linux to IBM Cloud
+## Migration AIX to IBM Cloud
 {: #3-migrate-aix-linux}
 
 **AIX Decision Tree**
@@ -202,7 +200,7 @@ Migrating AIX workloads from on-premises to IBM {{site.data.keyword.powerSys_not
 Using these third-party solutions, businesses can achieve a smooth transition to {{site.data.keyword.powerSys_notm}} while benefiting from advanced backup and recovery capabilities. FalconStor StorSafe VTL, and Mimix for instance, optimizes the migration by emulating physical tape drives, while MIMIX is known for its near-zero downtime and realistic data testing. Each tool provides unique benefits tailored to different migration needs, ensuring data protection and high performance in the cloud environment. By leveraging these applications, organizations can ensure a reliable and efficient migration, enhancing their IT infrastructure's resilience and flexibility.
 
 ### Backup and restore using mksysb images
-{: #1-migration-mksysb}
+{: #3-1-migration-mksysb}
 
 **Backup and restore using mksysb images**
 
@@ -228,7 +226,8 @@ In terms of time efficiency, this approach minimizes downtime through a streamli
  **Flexibility and Scalability:** Offers tailored backups for specific system components and scalable resources to meet changing workload demands, optimizing the migration process.
  **Enhanced Data Integrity and Security:** Maintains data integrity with accurate replication of the entire system and secure data transfer using cloud storage.
 
-**AIX Case Study**
+### AIX Case Study
+{: #3-2-migration-mksysb}
 
 **Case Study: Migrating AIX Workloads to IBM {{site.data.keyword.powerSys_notm}} Using mksysb and savevg**
 
@@ -283,8 +282,8 @@ By using mksysb and savevg, XYZ Corporation successfully migrated their AIX work
 ![AIX migration diagram using mksysb backup and restore method](/images/mksysbmigration.svg "Reference Summary"){: caption="{{site.data.keyword.powerSysFull}} backup and restore migration" caption-side="bottom"}{: external download="mksysbmigration.svg"}
 
 
-# AIX migration method limitations
-{: #1-migration-aix-limitations}
+### AIX migration method limitations
+{: #3-3-migration-aix-limitations}
 
 **Backup and restore using mksysb images**
 
@@ -347,10 +346,8 @@ Logical replication using 3rd party software
   * [Rocket iCluster](https://www.rocketsoftware.com/products/rocket-icluster/resources){: external}: Logical replication software that runs on Power systems running IBM i. iCluster uses journaling to provide high availability and disaster recovery for business applications and enables almost continuous access through real-time monitoring, notifying, and self-correcting replication.
 RobotHA:
 
-
-Case studies
-
-
+## IBMi Case studies
+{: #4-1-migration-ibmi}
 
 **Case Study: Migrating IBM i Workloads from On-Premises to IBM {{site.data.keyword.powerSys_notm}} Using FalconStor VTL**
 
@@ -402,8 +399,8 @@ By leveraging FalconStor's StorSafe VTL, LMN Healthcare successfully migrated th
 
 ![IBMi migration diagram using FalconStor method](/images/falconstormigration.svg "Reference Summary"){: caption="{{site.data.keyword.powerSysFull}} falconstor migration" caption-side="bottom"}{: external download="falconstormigration.svg"}
 
-# IBMi migration method limitations
-{: #1-migration-ibmi-limitations}
+## IBMi migration method limitations
+{: #4-2-migration-ibmi-limitations}
 
 **Falconstor VTL**
 
@@ -422,7 +419,7 @@ Migrating IBM i workloads to IBM {{site.data.keyword.powerSys_notm}} using appli
 Migrating IBM i workloads to IBM {{site.data.keyword.powerSys_notm}} using logical replication with third-party software—such as Assure MIMIX, Rocket iCluster, or RobotHA—is a powerful strategy for achieving near-zero downtime, but it has several limitations. First, these tools typically require separate licensing and ongoing costs, which can be significant, especially for small to mid-sized environments. Logical replication is journal-based, meaning it relies on proper journal configuration and object selection; if not set up correctly, critical objects or data could be missed. These tools replicate libraries, files, configurations, and user profiles, but often exclude some system-level objects like licensed programs or temporary system data. Additionally, the setup is technically complex and may require specialized expertise in both the software and IBM i internals. Successful failover and cutover require rigorous testing and monitoring, and while rollback is possible, it may not be as simple as with snapshot-based approaches. Finally, logical replication tools often introduce infrastructure overhead and require stable, high-performance network connections between the source and target systems. Despite these challenges, this method is ideal for environments that require high availability and minimal disruption during migration.
 
 ## Effects of performance metrics on a migration
-{: #1-migration-perfmetrics}
+{: #5-migration-perfmetrics}
 
 **Overview of Performance Metrics and Their Importance in Migrations**
 
@@ -436,15 +433,13 @@ When planning migrations, understanding key performance metrics is crucial for m
 
 These metrics are vital in migrations as they offer standardized benchmarks to compare system performance, aiding in capacity planning, cost-benefit analysis, and risk mitigation. They ensure the new system meets performance requirements, reducing downtime and maintaining operational efficiency.
 
-
-
 ## Summary
-{: #5-summary}
+{: #6-summary}
 
 Migrating IBM Power workloads to IBM {{site.data.keyword.powerSys_notm}} on IBM Cloud enables organizations to overcome the limitations of traditional on-prem infrastructure by gaining scalability, performance, and cost-efficiency. With multiple migration strategies—ranging from native backup and restore to advanced real-time replication—businesses can choose the approach that best fits their environment, downtime tolerance, and goals. IBM {{site.data.keyword.powerSys_notm}} offers a secure, flexible, and familiar platform that simplifies cloud adoption while maintaining workload continuity. By leveraging the tools, services, and best practices outlined in this white paper, organizations can execute a smooth, low-risk transition to the cloud and position themselves for future growth.
 
 ## References
-{: #6-references}
+{: #7-references}
 
  * [Planning a workload migration to IBM® Power® Virtual Server](/docs/power-iaas?topic=power-iaas-system-migration){: external}
  * [Migration strategies for AIX](/docs/power-iaas?topic=power-iaas-migration-aix){: external}
