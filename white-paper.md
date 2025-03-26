@@ -24,7 +24,7 @@ This whitepaper describes the business challenges with On Premise and Co-Located
 ## Overview
 {: #1-overview}
 
-Organizations are increasingly turning to cloud solutions to enhance scalability, reduce costs, and improve flexibility. IBM {{site.data.keyword.powerSys_notm}} in IBM Cloud offers a robust platform for running IBM AIX, Linux, and IBM i workloads with the benefits of cloud infrastructure. This white paper aims to guide businesses through the migration process, highlighting key considerations and actionable steps.This whitepaper describes the business challenges with On Premise and Co- Located Power workloads and provides prescriptive solution choices to move the platform to {{site.data.keyword.powerSys_notm}} on IBM Cloud. The  many design considerations involved in making this determination and the migration approach  are described in this paper.
+Organizations are increasingly turning to cloud solutions to enhance scalability, reduce costs, and improve flexibility. IBM {{site.data.keyword.powerSys_notm}} in IBM Cloud offers a robust platform for running IBM AIX, and IBM i workloads with the benefits of cloud infrastructure. This white paper aims to guide businesses through the migration process, highlighting key considerations and actionable steps.This whitepaper describes the business challenges with On Premise and Co- Located Power workloads and provides prescriptive solution choices to move the platform to {{site.data.keyword.powerSys_notm}} on IBM Cloud. The  many design considerations involved in making this determination and the migration approach  are described in this paper.
 
 ### Challenges
 {: #1-1-challenges}
@@ -95,7 +95,7 @@ This document outlines the migration considerations, proposes migration strategi
 * **Disaster Recovery:** Implement robust disaster recovery solutions with IBM Cloud's resilience.
 
 
-### Use cases for {{site.data.keyword.powerSys_notm}} AIX/Linux on IBM Cloud
+### Use cases for {{site.data.keyword.powerSys_notm}} AIX on IBM Cloud
 {: #1-3-usecases}
 
 IBM {{site.data.keyword.powerSys_notm}} is a family of configurable multi-tenant virtual IBM Power servers with access to IBM Cloud services. It supports AIX, IBM i, Linux and OpenShift, and is certified for SAP and Oracle workloads. It has exactly the same stack as IBM Power on-premises and provides clients with a consistent experience.
@@ -170,7 +170,7 @@ Decision tree:
 
 
 ## Migration AIX to IBM Cloud
-{: #3-migrate-aix-linux}
+{: #3-migrate-aix}
 
 **AIX Decision Tree**
 
@@ -226,8 +226,8 @@ In terms of time efficiency, this approach minimizes downtime through a streamli
  **Flexibility and Scalability:** Offers tailored backups for specific system components and scalable resources to meet changing workload demands, optimizing the migration process.
  **Enhanced Data Integrity and Security:** Maintains data integrity with accurate replication of the entire system and secure data transfer using cloud storage.
 
-### AIX Case Study
-{: #3-2-migration-mksysb}
+## AIX Case Study
+{: #3-2-aix-case-study}
 
 **Case Study: Migrating AIX Workloads to IBM {{site.data.keyword.powerSys_notm}} Using mksysb and savevg**
 
@@ -346,7 +346,7 @@ Logical replication using 3rd party software
   * [Rocket iCluster](https://www.rocketsoftware.com/products/rocket-icluster/resources){: external}: Logical replication software that runs on Power systems running IBM i. iCluster uses journaling to provide high availability and disaster recovery for business applications and enables almost continuous access through real-time monitoring, notifying, and self-correcting replication.
 RobotHA:
 
-## IBMi Case studies
+## IBMi Case study
 {: #4-1-migration-ibmi}
 
 **Case Study: Migrating IBM i Workloads from On-Premises to IBM {{site.data.keyword.powerSys_notm}} Using FalconStor VTL**
