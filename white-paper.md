@@ -60,29 +60,23 @@ Note that IBM also offers {{site.data.keyword.powerSys_notm}} on-prem, {{site.da
 
 Here are some of the benefits by using {{site.data.keyword.powerSys_notm}} in IBM Cloud.
 
-**Performance with latest Power processor**
-
-Client can provision IBM {{site.data.keyword.powerSys_notm}} in IBM data centers in a matter of minutes, and take advantage of the latest Power processor.
+**Performance with latest Power processor:** Client can provision IBM {{site.data.keyword.powerSys_notm}} in IBM data centers in a matter of minutes, and take advantage of the latest Power processor.
 
 IBM makes constant innovations on the Power processors, and push out a newer version of IBM Power every 2 or 3 years. It is built to meet today’s challenges with new levels of performance, core-to-cloud data protection, and streamlined automation and insights. Power systems have more crypto accelerators per core, provides full memory encryption at scale, and support quantum-safe cryptography. Power 10 can accelerate AI training and inferencing with its built-in Matrix Math Accelerators (MMA) without requiring external accelerators, such as GPUs, for executing statistical machine learning and inferencing (scoring) workloads. It also offers memory sharing among Power Servers to handle AI models at scale. This further drives a business demand for a flexible and scalable cloud compute consumption model.
 
-**Flexibility and scalability**
+**Flexibility and scalability:** {{site.data.keyword.powerSys_notm}} is available across 10 IBM Cloud multi-zone regions across Americas, Europe and APAC and 22 data centers. Client can deploy {{site.data.keyword.powerSys_notm}} in IBM data centers around the globe, with scalable resources adjustable based on demand.
 
-{{site.data.keyword.powerSys_notm}} is available across 10 IBM Cloud multi-zone regions across Americas, Europe and APAC and 22 data centers. Client can deploy {{site.data.keyword.powerSys_notm}} in IBM data centers around the globe, with scalable resources adjustable based on demand.
+**Cost-effective OPEX model:** With flexible pay-as-you-go model, client only pays for what they use. This not only applies to the {{site.data.keyword.powerSys_notm}} compute, but also to the storage. Client can move away from costly dedicated on premise storage to more scalable cloud storage models – replacing Tape with {{site.data.keyword.cos_full_notm}}, SAN with Cloud block & file or use vSAN in the VMware SDDC model on cloud bare metal servers.
 
-**Cost-effective OPEX model**
+**Smooth transition to cloud:** IBM {{site.data.keyword.powerSys_notm}} has the same architecture in a cloud environment as IBM Power on-premises. It supports AIX, IBM i, Linux and OpenShift, and is certified for SAP and Oracle workloads, allowing a smooth transition for businesses already using IBM Power systems to cloud.
 
-With flexible pay-as-you-go model, client only pays for what they use. This not only applies to the {{site.data.keyword.powerSys_notm}} compute, but also to the storage. Client can move away from costly dedicated on premise storage to more scalable cloud storage models – replacing Tape with {{site.data.keyword.cos_full_notm}}, SAN with Cloud block & file or use vSAN in the VMware SDDC model on cloud bare metal servers.
+* **Improved platform availability:** The accelerated shift to a digital economy, partly due to the Covid pandemic, along increased business demand for higher availability of production critical applications requires greater platform availability of 99.99+%.
 
-**Smooth transition to cloud**
+* **Security:** Business requires secure the software supply chain for both intellectual capital (asset) protection and certified untampered code. The number and cost of cyber-attacks has greatly escalated in recent years. This has caused businesses to take a more disciplined approach to system and data security. End to end encryption is needed to secure business data and encryption key management has taken on increased importance. On IBM Cloud, businesses have options to use IBM provided keys or can bring their own encryption keys (BYOK).  With {{site.data.keyword.hscrypto}} (HPCS), IBM Cloud offers a unique solution which allows a business to keep their own keys (KYOK) on a dedicated key management service and Hardware Security Module.  Ransomware, cyber-attacks and other security related issues added the business requirement of a minimum viable company (MVC) platform solution.
 
-IBM {{site.data.keyword.powerSys_notm}} has the same architecture in a cloud environment as IBM Power on-premises. It supports AIX, IBM i, Linux and OpenShift, and is certified for SAP and Oracle workloads, allowing a smooth transition for businesses already using IBM Power systems to cloud.
+* **Sustainability** 
 
-**Improved platform availability:** The accelerated shift to a digital economy, partly due to the Covid pandemic, along increased business demand for higher availability of production critical applications requires greater platform availability of 99.99+%.
-
-**Security:** Business requires secure the software supply chain for both intellectual capital (asset) protection and certified untampered code. The number and cost of cyber-attacks has greatly escalated in recent years. This has caused businesses to take a more disciplined approach to system and data security. End to end encryption is needed to secure business data and encryption key management has taken on increased importance. On IBM Cloud, businesses have options to use IBM provided keys or can bring their own encryption keys (BYOK).  With {{site.data.keyword.hscrypto}} (HPCS), IBM Cloud offers a unique solution which allows a business to keep their own keys (KYOK) on a dedicated key management service and Hardware Security Module.  Ransomware, cyber-attacks and other security related issues added the business requirement of a minimum viable company (MVC) platform solution.
-
-**Sustainability** IT agility is key to business success today. Businesses need scalable and elastic environments.  Cloud platforms enable this capability and IBM Cloud provides automation for the {{site.data.keyword.powerSys_notm}} platform to further enhance this agility. Integration with other IBM Cloud services provide insights to clouds usage and facilitate auditing and control.
+IT agility is key to business success today. Businesses need scalable and elastic environments.  Cloud platforms enable this capability and IBM Cloud provides automation for the {{site.data.keyword.powerSys_notm}} platform to further enhance this agility. Integration with other IBM Cloud services provide insights to clouds usage and facilitate auditing and control.
 
 This document outlines the migration considerations, proposes migration strategies, and directs users to the relevant documentation for Power workloads migration from on-premises to IBM Cloud,
 
