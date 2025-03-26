@@ -228,13 +228,6 @@ In terms of time efficiency, this approach minimizes downtime through a streamli
  **Flexibility and Scalability:** Offers tailored backups for specific system components and scalable resources to meet changing workload demands, optimizing the migration process.
  **Enhanced Data Integrity and Security:** Maintains data integrity with accurate replication of the entire system and secure data transfer using cloud storage.
 
-**Limitations**
-
-Need to fill in
-
- Add mksysb backup and restore diagram here
-Figure 1 -AIX  mksysb
-
 **AIX Case Study**
 
 **Case Study: Migrating AIX Workloads to IBM {{site.data.keyword.powerSys_notm}} Using mksysb and savevg**
@@ -287,6 +280,31 @@ Figure 1 -AIX  mksysb
 
 By using mksysb and savevg, XYZ Corporation successfully migrated their AIX workloads to IBM {{site.data.keyword.powerSys_notm}}, achieving a seamless transition with significant cost savings and improved operational efficiency.
 
+![AIX migration diagram using mksysb backup and restore method](/images/mksysbmigration.svg "Reference Summary"){: caption="{{site.data.keyword.powerSysFull}} backup and restore migration" caption-side="bottom"}{: external download="mksysbmigration.svg"}
+
+
+# AIX migration method limitations
+{: #1-migration-aix-limitations}
+
+**Backup and restore using mksysb images**
+
+Migrating to IBM {{site.data.keyword.powerSys_notm}} using a backup and restore approach with mksysb is straightforward and cost-effective, but it comes with several limitations. It requires system downtime, as it’s a point-in-time snapshot that doesn’t support incremental changes or live migration. The process only backs up the root volume group (rootvg), so additional data must be handled separately using tools like savevg. Post-migration, network and device configurations often need to be manually adjusted to fit the cloud environment. It’s also less ideal for large systems due to potential performance and transfer bottlenecks, and it lacks the automation and real-time sync capabilities of advanced methods like GLVM or MIMIX. Despite these drawbacks, it’s a solid option for smaller, non-critical workloads where downtime is acceptable.
+
+**Host and Operating System Mirroring using GLVM**
+
+Migrating to IBM PowerVS using Host and Operating System Mirroring with GLVM offers high availability and real-time data replication but comes with several limitations. The setup is technically complex and requires expertise in AIX, LVM, and networking. It’s heavily dependent on high-speed, low-latency network connectivity, which can be costly and impact performance over long distances. GLVM replicates at the volume level, lacking application awareness and transaction-level consistency, making it less suitable for workloads that require fine-grained control. It’s also not ideal for small or one-time migrations due to its infrastructure and operational overhead. This method is best suited for environments that demand continuous availability and robust disaster recovery rather than basic workload transfers.
+
+**Database replication**
+
+Migrating AIX workloads to IBM PowerVS using database replication is a powerful approach for minimizing downtime and maintaining real-time data consistency. However, it has several important limitations to consider. First, database replication only transfers the data layer—it does not replicate the operating system, middleware, applications, or system configurations. This means the target environment in PowerVS must be manually configured to match the source system, which can add complexity and risk if there are environment-specific dependencies. Additionally, the replication process often requires compatible database versions and schemas between the source and target, and in some cases, database upgrades may be necessary before replication can begin.
+
+Setting up replication can also be technically complex, requiring deep knowledge of features like DB2 HADR, Oracle Data Guard, or third-party replication tools. These tools may have licensing costs and require specialized skills to configure and maintain. There’s also potential performance impact on the source system, particularly in high-transaction environments, as real-time replication consumes compute and I/O resources. During the final cutover, ensuring complete data synchronization and avoiding data drift can be challenging—especially if the source database remains active while switching to the target.
+
+Overall, while database replication is ideal for scenarios where data availability is critical and application layers can be rebuilt or reinstalled separately, it is less suitable for full-stack system migrations or when a completely identical environment is required in PowerVS. Proper planning, testing, and coordination are essential to avoid surprises during migration.
+
+**3rd party replication software**
+
+Migrating AIX workloads to IBM PowerVS using third-party tools (like FalconStor, MIMIX, Double-Take, etc.) can streamline the process and reduce downtime, but there are important limitations to consider. First, licensing and subscription costs for these tools can be significant, especially for small or budget-constrained projects. Setup and configuration often require specialized expertise, and vendors may have differing support models or integration complexity. These tools may introduce compatibility issues with specific AIX versions, storage layouts, or custom configurations. In some cases, third-party tools add infrastructure overhead or require agents that impact performance. Additionally, vendor lock-in can be a concern if ongoing replication or HA/DR functionality depends on the same tool post-migration. Finally, while these tools are great for minimizing downtime, they often need careful testing and validation to ensure data consistency and full system functionality in the PowerVS environment.
 
 ## Migration IBM i to IBM Cloud
 {: #4-migration-ibmi}
@@ -381,6 +399,30 @@ Case studies
  * **Secure Transfer:** Data was securely transferred and protected throughout the migration process.
 
 By leveraging FalconStor's StorSafe VTL, LMN Healthcare successfully migrated their IBM i workloads to IBM {{site.data.keyword.powerSys_notm}}. The migration resulted in significant cost savings, enhanced performance, and improved operational efficiency, ensuring a seamless and reliable transition to the cloud.
+
+![IBMi migration diagram using FalconStor method](/images/falconstormigration.svg "Reference Summary"){: caption="{{site.data.keyword.powerSysFull}} falconstor migration" caption-side="bottom"}{: external download="falconstormigration.svg"}
+
+# IBMi migration method limitations
+{: #1-migration-ibmi-limitations}
+
+**Falconstor VTL**
+
+Migrating IBM i workloads to IBM PowerVS using FalconStor VTL is a reliable method that leverages virtual tape backups to simulate traditional tape-based restore processes in the cloud. However, it comes with several limitations. It is a point-in-time backup and restore approach, meaning it does not support real-time replication, and any changes made after the backup must be reapplied manually. This process typically requires planned downtime, making it less suitable for high-availability environments. The migration involves multiple manual steps, including backup creation, data transfer, and system restoration, and may require adjustments to system configurations in PowerVS. Setting up FalconStor VTL also requires specialized expertise and proper network connectivity between the on-prem and cloud environments. For very large workloads, data transfer times can be significant, even with deduplication. Additionally, it does not preserve active jobs, sessions, or in-flight data, which may impact business continuity during cutover. While FalconStor VTL is effective for full system migrations, it’s not ideal for environments needing incremental or near-zero downtime migrations.
+
+**Operating System level backup and restore**
+
+Migrating IBM i workloads to IBM PowerVS using Operating System-level backup and restore—such as SAVSYS, GO SAVE menu options, or full system save (Option 21)—is a traditional and cost-effective approach, but it also has several limitations. This method requires a full system shutdown or restricted state to perform a consistent backup, resulting in planned downtime. It captures the system as a snapshot, meaning no real-time synchronization, and any changes after the backup must be re-applied manually. Additionally, it involves manual configuration steps during the restore process in PowerVS, including setting up devices, network configurations, and IPL settings. Large environments may face long backup and restore times, especially if cloud storage or lower-bandwidth networks are used for transfer. The method also does not preserve active sessions or jobs, and doesn’t support automation or rollback features typically offered by replication tools. While suitable for smaller or non-critical systems, this approach may fall short for complex, high-availability environments that require minimal disruption and fast recovery.
+
+**Application level replication for example  DB2, Oracle, SAP**
+
+Migrating IBM i workloads to IBM PowerVS using application-level replication—such as DB2 HADR, Oracle Data Guard, or SAP HANA replication—offers targeted data replication with minimal downtime, but it has several limitations. This method only replicates the application data, not the operating system, user configurations, or the broader application environment. As a result, the target system in PowerVS must be manually prepared, including OS setup, user provisioning, application installation, and configuration to match the source. It also requires that the replication-capable version of the application is installed and supported in both the source and target environments. Application-level replication typically involves complex setup, licensing, and infrastructure requirements, and may need expert knowledge to manage logs, failovers, and synchronization. Additionally, this method does not handle non-application files (e.g., spool files, custom scripts, system objects), so full system functionality might not be preserved without additional migration steps. While effective for business-critical databases or ERP systems, application-level replication is best used as part of a hybrid migration strategy, not as a complete solution on its own.
+
+**Logical replication with third party software**
+
+Migrating IBM i workloads to IBM PowerVS using logical replication with third-party software—such as Assure MIMIX, Rocket iCluster, or RobotHA—is a powerful strategy for achieving near-zero downtime, but it has several limitations. First, these tools typically require separate licensing and ongoing costs, which can be significant, especially for small to mid-sized environments. Logical replication is journal-based, meaning it relies on proper journal configuration and object selection; if not set up correctly, critical objects or data could be missed. These tools replicate libraries, files, configurations, and user profiles, but often exclude some system-level objects like licensed programs or temporary system data. Additionally, the setup is technically complex and may require specialized expertise in both the software and IBM i internals. Successful failover and cutover require rigorous testing and monitoring, and while rollback is possible, it may not be as simple as with snapshot-based approaches. Finally, logical replication tools often introduce infrastructure overhead and require stable, high-performance network connections between the source and target systems. Despite these challenges, this method is ideal for environments that require high availability and minimal disruption during migration.
+
+## Effects of performance metrics on a migration
+{: #1-migration-perfmetrics}
 
 **Overview of Performance Metrics and Their Importance in Migrations**
 

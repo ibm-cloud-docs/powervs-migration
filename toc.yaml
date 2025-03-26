@@ -17,14 +17,14 @@ toc:
     label: Migration to Power Virtual Server on IBM Cloud
     description: This whitepaper provides prescriptive solution choices to move Power workloads to Power Virtual Server on IBM Cloud.
     authors:
+    - name: Jose Ocasio
+      title: Technical Solution Architect - IBM Cloud Complex Solutions
+      url: https://www.linkedin.com
     - name: Yichong Yu
       title: STSM, IBM Cloud for Financial Services
       url: https://www.linkedin.com
     - name: Joseph Kiernan
       title: Technical Solution Architect
-      url: https://www.linkedin.com
-    - name: Jose Ocasio
-      title: Technical Solution Architect - IBM Cloud Complex Solutions
       url: https://www.linkedin.com
   entries:
   - navgroup:
