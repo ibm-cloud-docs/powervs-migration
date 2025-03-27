@@ -291,7 +291,7 @@ By using `mksysb` and `savevg`, XYZ Corporation successfully migrated their AIX 
 
 Review the {{site.data.keyword.IBM}} i decision tree and the migration options in the following sections.
 
-![IBM i migration decision tree](/images/ibmimigration.svg "Reference Summary"){: caption="{{site.data.keyword.powerSysFull}} IBMi decision tree" caption-side="bottom"}{: external download="ibmimigration.svg"}
+![IBM i migration decision tree](/images/ibmimigration.svg "Reference Summary"){: caption="{{site.data.keyword.powerSysFull}} IBM i decision tree" caption-side="bottom"}{: external download="ibmimigration.svg"}
 
 There are several options for migrating IBM i series from on-premises to {{site.data.keyword.powerSys_notm}} on {{site.data.keyword.cloud_notm}}
 * FalconStorVTL
