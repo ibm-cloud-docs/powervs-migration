@@ -236,8 +236,8 @@ Third-party replication software
 **Client overview:** XYZ Corporation, a mid-sized manufacturing company, relies heavily on AIX systems for its critical business operations, including ERP and supply chain management. With growing data needs and an aging on-premises infrastructure, XYZ Corporation decided to migrate their AIX workloads to {{site.data.keyword.powerSys_notm}} to leverage the cloud's scalability, performance, and cost efficiencies.
 
 **Challenges:**
-* Aging Infrastructure: XYZ Corporation's on-premises hardware was reaching end-of-life, increasing the risk of hardware failures and downtime.
-* Data Integrity: Ensuring the integrity of critical data during the migration process was paramount.
+* Aging infrastructure: XYZ Corporation's on-premises hardware was reaching end-of-life, increasing the risk of hardware failures and downtime.
+* Data integrity: Ensuring the integrity of critical data during the migration process was paramount.
 * Minimal downtime: The manufacturing processes might not afford significant downtime, needing a seamless transition.
 
 **Solution:** To address these challenges, XYZ Corporation chose to use the `mksysb` and `savevg` commands for a comprehensive and efficient migration strategy.
