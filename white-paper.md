@@ -16,10 +16,10 @@ subcollection: powervs-migration
 # Migrating to {{site.data.keyword.powerSys_notm}} on {{site.data.keyword.cloud_notm}}
 {: #white-paper}
 
-This white paper describes the business challenges with on-premises and colocated power workloads and offers prescriptive solutions choices for migrating to {{site.data.keyword.powerSysFull}} on {{site.data.keyword.cloud_notm}}. It covers key design considerations and migration strategies to guide your transition with actionable steps.
+This white paper describes the business challenges with on-premises and colocated Power workloads and offers prescriptive solutions choices for migrating to {{site.data.keyword.IBM}} {{site.data.keyword.powerSysFull}}. It covers key design considerations and migration strategies to guide your transition with actionable steps.
 {: shortdesc}
 
-Organizations are turning to cloud solutions to enhance scalability, reduce costs, and improve flexibility. {{site.data.keyword.powerSys_notm}} on {{site.data.keyword.cloud_notm}} offers a robust platform for running {{site.data.keyword.IBM}} AIX and {{site.data.keyword.IBM}} i workloads with the benefits of cloud infrastructure.
+Organizations are turning to cloud solutions to enhance scalability, reduce costs, and improve flexibility. {{site.data.keyword.IBM}} {{site.data.keyword.powerSys_notm}} offers a robust platform for running {{site.data.keyword.IBM}} AIX and {{site.data.keyword.IBM}} i workloads with the benefits of cloud infrastructure.
 
 ## On-premises challenges
 {: #challenges}
@@ -54,7 +54,7 @@ These factors affect clients that manage [{{site.data.keyword.IBM}} Power](https
 
 {{site.data.keyword.powerSys_notm}} is an {{site.data.keyword.IBM}} Power server offering. Clients can use {{site.data.keyword.powerSys_notm}} to deploy a virtual server, also known as a logical partition (LPAR), in a matter of minutes. You can provision flexible, secure, and scalable compute capacity for Power enterprise workloads on {{site.data.keyword.powerSys_notm}} in the {{site.data.keyword.cloud_notm}} console.
 
-{{site.data.keyword.IBM}} also offers {{site.data.keyword.powerSys_notm}} on-premises through {{site.data.keyword.powerSys_notm}} Private Cloud, which enables clients to benefit from cloud capabilities and cost models, but keep infrastructure onsite. However, this article focuses on {{site.data.keyword.powerSys_notm}} on {{site.data.keyword.cloud_notm}}.
+{{site.data.keyword.IBM}} also offers {{site.data.keyword.powerSys_notm}} on-premises through [{{site.data.keyword.powerSys_notm}} Private Cloud](/docs/power-iaas?topic=power-iaas-getting-started){: external}, which enables clients to benefit from cloud capabilities and cost models, but keep infrastructure onsite. However, this article focuses on {{site.data.keyword.powerSys_notm}} on {{site.data.keyword.cloud_notm}}.
 {: note}
 
 Review the following benefits of using {{site.data.keyword.powerSys_notm}} on {{site.data.keyword.cloud_notm}}.
@@ -137,7 +137,7 @@ If client wants to manage the migration, here are the general process:
     * Deployable Architecture - IBM Cloud deployable architecture is cloud automation for deploying a common architectural pattern that combines one or more cloud resources. It offers a modular, flexible foundation for businesses to build, deploy, and manage applications securely in the cloud. IBM Cloud offers a few different flavors of [deployable architectures](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-automation-solution-overview) that provide an automated deployment method to create an isolated Power Virtual Server workspace and connect it with IBM Cloud services and public internet.
     * For clients in regulated industries, it is recommended to follow these [best practices](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-best-practices) and recommendations.
  * Workload migration - There are many options for workload migration, and the choices are different for different OS, applications, and databases. Client should also consider the various factors discussed above. We will drill down into the details of workload migration in the following sections.
-* Workload resiliency - IBM Cloud provides various services, and client should choose strategies for backup ([AIX/Linux](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-backup-strategies), [IBM i](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-backup-ibmi)) and [High Availability (HA) and Disaster Recovery (DR)](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-ha-dr). IBM Cloud provides various services.
+* Workload resiliency - IBM Cloud provides various services, and client should choose strategies for backup ([AIX](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-backup-strategies), [IBM i](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-backup-ibmi)) and [High Availability (HA) and Disaster Recovery (DR)](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-ha-dr). IBM Cloud provides various services.
 * Security and compliance - The Power Virtual Server provides programs and certifications that help you establish and strengthen compliance for a wide range of internationally recognized standards. You can explore more details in [IBM Cloud Docs](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-compliances-list).
 
 ## Migrating AIX to {{site.data.keyword.cloud_notm}}
