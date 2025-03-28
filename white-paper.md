@@ -129,7 +129,7 @@ If you want to manage the migration, review the general process:
    * Choose a strategy for backup ([AIX](/docs/power-iaas?topic=power-iaas-backup-strategies), [IBM i](/docs/power-iaas?topic=power-iaas-backup-ibmi)) and [High Availability and Disaster Recovery for {{site.data.keyword.powerSys_notm}}](/docs/power-iaas?topic=power-iaas-ha-dr).
 1. Security and compliance. {{site.data.keyword.powerSys_notm}} provides programs and certifications that help you establish and strengthen compliance for a wide range of internationally recognized standards. For more information, see [Compliance certifications](/docs/power-iaas?topic=power-iaas-compliances-list).
 
-Review the following scenarios you encounter in the migration process and the recommended approach.
+Review the following key factors related to your workloads during migration and the recommended approaches for each.
 
 | Scenario | Recommended approach |
 |----------|----------------------|
@@ -139,7 +139,7 @@ Review the following scenarios you encounter in the migration process and the re
 | **Large data transfers** | Direct network transfers to {{site.data.keyword.powerSys_notm}} are preferred. Use Aspera when possible. |
 | **Very large data migrations** | Use deduplication tools, like FalconStor StorSafe VTL, to reduce data transfer volume. |
 | **Zero-downtime environments** | Combine backup and restore for initial seeding, followed by replication, to maintain data synchronization. |
-{: caption="Markdown coding for tables" caption-side="bottom"}
+{: caption="Migration scenarios and approaches." caption-side="bottom"}
 
 ## Using performance metrics to plan a migration
 {: #migration-perfmetrics}
@@ -353,7 +353,7 @@ Application-level replication (Db2, Oracle, SAP)
 Logical replication with third-party software
 :   Migrating {{site.data.keyword.IBM}} i workloads to {{site.data.keyword.powerSys_notm}} by using logical replication with third-party software, such as Assure MIMIX, Rocket iCluster, or RobotHA, is a powerful strategy for achieving near-zero downtime, but it has several limitations. First, these tools typically require separate licensing and ongoing costs, which can be significant, especially for small to mid-sized environments. Logical replication is journal-based, meaning that it relies on proper journal configuration and object selection; if not set up correctly, critical objects or data might be missed. These tools replicate libraries, files, configurations, and user profiles, but often exclude some system-level objects like licensed programs or temporary system data. Also, the setup is technically complex and might require specialized expertise in both the software and {{site.data.keyword.IBM}} i internals. Successful failover and cutover require rigorous testing and monitoring, and while rollback is possible, it might not be as simple as with snapshot-based approaches. Finally, logical replication tools often introduce infrastructure costs and require stable, high-performance network connections between the source and target systems. Despite these challenges, this method is ideal for environments that require high availability and minimal disruption during migration.
 
-## {{site.data.keyword.IBM}} i case Study
+## {{site.data.keyword.IBM}} i case study
 {: #migration-ibmi}
 
 Migrating on-premises {{site.data.keyword.IBM}} i workloads to {{site.data.keyword.powerSys_notm}} with FalconStor VTL.
