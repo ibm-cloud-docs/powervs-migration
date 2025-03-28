@@ -2,7 +2,7 @@
 
 copyright:
   years: 2025
-lastupdated: "2025-03-25"
+lastupdated: "2025-03-28"
 
 keywords:
 
@@ -16,7 +16,7 @@ subcollection: powervs-migration
 # Migrating to {{site.data.keyword.powerSys_notm}} on {{site.data.keyword.cloud_notm}}
 {: #white-paper}
 
-This white paper describes the business challenges with on-premises and colocated Power workloads and offers prescriptive solutions choices for migrating to {{site.data.keyword.IBM}} {{site.data.keyword.powerSysFull}}. It covers key design considerations and migration strategies to guide your transition with actionable steps.
+This white paper describes the business challenges with on-premises and colocated Power workloads and offers prescriptive solutions for migrating to {{site.data.keyword.IBM}} {{site.data.keyword.powerSysFull}}. It covers key design considerations and migration strategies to guide your transition with actionable steps.
 {: shortdesc}
 
 Organizations are turning to cloud solutions to enhance scalability, reduce costs, and improve flexibility. {{site.data.keyword.IBM}} {{site.data.keyword.powerSys_notm}} offers a robust platform for running {{site.data.keyword.IBM}} AIX and {{site.data.keyword.IBM}} i workloads with the benefits of cloud infrastructure.
@@ -74,21 +74,21 @@ Smooth migration to the cloud
 :   {{site.data.keyword.powerSys_notm}} has the same architecture in a cloud environment as {{site.data.keyword.IBM}} Power on-premises. It supports AIX, {{site.data.keyword.IBM}} i, Linux, and Red Hat OpenShift, and is certified for SAP and Oracle workloads, allowing a smooth migration for businesses already by using {{site.data.keyword.IBM}} Power Systems to cloud.
 
 Improved platform availability
-:   The accelerated shift to a digital economy, partly due to the Covid pandemic, along with increased business demand for higher availability of production critical applications requires greater platform availability of 99.99+%.
+:   The accelerated shift to a digital economy, partly due to the Covid pandemic, along with increased business demand for higher availability of production-critical applications, requires greater platform availability of 99.99+%. For more information about platform availability, see the [{{site.data.keyword.cloud_notm}} service level objectives](/docs/resiliency?topic=resiliency-slo).
 
 Security
-:  Security is a critical business requirement to protect intellectual capital and ensure the integrity of software supply chains. With the growing number and cost of cyberattacks, organizations must adopt a disciplined approach to system and data security. End-to-end encryption is essential for safeguarding business data, and effective encryption key management plays a vital role. On {{site.data.keyword.cloud_notm}}, businesses have the flexibility to use {{site.data.keyword.IBM}}-provided encryption keys or bring their own keys (BYOK). Using {{site.data.keyword.keymanagementserviceshort}} (Key Protect), {{site.data.keyword.cloud_notm}} offers a centralized, secure, and scalable key management solution that integrates with cloud services and applications. It enables lifecycle management of encryption keys without the complexity of hardware-based security modules. The increasing risk of ransomware and other cyber threats reinforces the need for a minimum viable company (MVC) platform built with security and resilience at its core.
+:  Security is a critical business requirement to protect intellectual capital and ensure the integrity of software supply chains. With the growing number and cost of cyberattacks, organizations must adopt a disciplined approach to system and data security. End-to-end encryption is essential for safeguarding business data, and effective encryption key management plays a vital role. On {{site.data.keyword.cloud_notm}}, businesses have the flexibility to use {{site.data.keyword.IBM}}-provided encryption keys or bring their own keys (BYOK). Using {{site.data.keyword.keymanagementserviceshort}} (Key Protect), {{site.data.keyword.cloud_notm}} offers a centralized, secure, and scalable key management solution that integrates with cloud services and applications. It enables lifecycle management of encryption keys without the complexity of hardware-based security modules. The increasing risk of ransomware and other cyberthreats reinforces the need for a minimum viable company (MVC) platform that is built with security and resilience at its core.
 
 Sustainability
-:   {{site.data.keyword.IBM}} is committed to driving sustainability through energy-efficient infrastructure and responsible cloud operations. Power Virtual Server helps organizations reduce their carbon footprint by shifting workloads to shared, energy-optimized IBM Cloud data centers, which are designed for high efficiency and sustainability at scale. By moving away from energy-intensive on-premises infrastructure to a cloud-based OPEX model, clients can better align with ESG goals and reduce overall power consumption. Additionally, IBM’s focus on processor efficiency—like with Power10—means clients benefit from greater performance-per-watt, helping to support greener IT operations.
+:   {{site.data.keyword.IBM}} is committed to driving sustainability through energy-efficient infrastructure and responsible cloud operations. {{site.data.keyword.powerSys_notm}} helps organizations reduce their carbon footprint by shifting workloads to shared, energy-optimized {{site.data.keyword.cloud_notm}} data centers, which are designed for high efficiency and sustainability at scale. By moving away from energy-intensive on-premises infrastructure to a cloud-based OpEx model, you can better align with ESG goals and reduce overall power consumption. {{site.data.keyword.IBM}}’s focus on processor efficiency, like with Power10, means that clients benefit from greater performance-per-watt and greener IT operations.
 
 Disaster recovery
-:   {{site.data.keyword.powerSys_notm}} offers a resilient and scalable platform to protect your critical workloads with advanced backup and disaster recovery solutions. For more information, see [High availability and disaster recovery](/docs/power-iaas?topic=power-iaas-ha-dr).
+:   {{site.data.keyword.powerSys_notm}} offers a resilient and scalable platform to protect your critical workloads with advanced backup and disaster recovery solutions. For more information, see [Understanding disaster recovery](/docs/resiliency?topic=resiliency-understanding-dr) and [High availability and disaster recovery for {{site.data.keyword.powerSys_notm}}](/docs/power-iaas?topic=power-iaas-ha-dr).
 
 IT agility is key to business success today. Businesses need scalable and elastic environments, which cloud platforms enable. {{site.data.keyword.cloud_notm}} provides automation for the {{site.data.keyword.powerSys_notm}} platform, and integration with other {{site.data.keyword.cloud_notm}} services provide insights to cloud usage, facilitating auditing and control.
 
 ## Use cases for {{site.data.keyword.powerSys_notm}} on {{site.data.keyword.cloud_notm}}
-{: #1-3-usecases}
+{: #usecases}
 
 Review common use cases for {{site.data.keyword.powerSys_notm}}:
 
@@ -102,43 +102,60 @@ Modernization
 :   {{site.data.keyword.powerSys_notm}} resources reside in {{site.data.keyword.cloud_notm}} data centers with dedicated networking and storage area network-attached Fibre Channel storage. The internal networks are fenced but offer connectivity options to {{site.data.keyword.cloud_notm}} infrastructure or private cloud environments. This infrastructure design enables {{site.data.keyword.powerSys_notm}} to maintain key enterprise software certification and support as the {{site.data.keyword.powerSys_notm}} architecture is identical to certified private cloud infrastructure. It also enables {{site.data.keyword.powerSys_notm}} to connect to over 190 {{site.data.keyword.cloud_notm}} services seamlessly. Companies can use cloud services to modernize applications by enhancing scalability, integrating advanced tools, and enabling seamless updates. This approach supports faster innovation, improves performance, and ensures that your applications are equipped to meet evolving business demands.
 
 ## Migration process
-{: #2-migration-process}
+{: #migration-process}
 
-**Migration considerations**
+Consider different factors before choosing the right migration strategy:
 
-Different factors should be considered before choosing the right migration strategy.
-
-* Environment - Whether it is dev/test non-production environment or production environment?
+* Environment - Is it a dev or test non-production environment or production environment?
 * Allowable downtime - How much downtime is allowed to safely complete the migration?
-* Workloads – Is it OS level backup, or application or database backup?
-* Data size - What is the data size, small (< 2TB),  medium (3-10TB), or large (>10TB)?
-* Network options - Does the backup needs to use public internet with VPN, is Direct Link available? What is the network bandwidth?
-* Skills – Prefer managed solution or has skills to perform the tasks.
-* Cost – Stick to existing licenses or OS commands or open to acquire new software/tools.
+* Workloads – Is it OS level backup, application, or database backup?
+* Data size - Is the data size small (< 2TB), medium (3-10TB), or large (>10TB)?
+* Network options - Does the backup need to use public internet with VPN, is Direct Link available? What is the network bandwidth?
+* Skills – Do you prefer a managed solution or does your team have the skills to complere the migration?
+* Cost – Do you need to use existing licenses or OS commands, or are you open to using new software and tools?
 
-We will discuss the details of migration in this article. Here are a few high level guidelines:
+Depending on your organization's skillset, you might need assistance in your migration from on-premises to cloud. Contact the [IBM Technology Expert Labs](https://www.ibm.com/products/expertlabs) to connect with client engineering.
+{: tip}
 
-* Direct Link is preferred, which can provide the security and bandwidth needed. Use VPN when Direct Link is not available.
-* For small data size, especially OS level migration, a common approach is to use OS-dependent backup tools to do the backup and restore.
-* For small data size, transfer via Cloud Object Storage (COS) bucket may be acceptable; Use Aspera when possible.
-* For larger data size, directly transfer to Power Virtual Server over network if possible; Use Aspera when possible.
-* For large data size, use tool (eg. FalconStor Storsafe VTL) that can deduplicate and minimize data transfer to the cloud when possible.
-* In no downtime environment, need to combine backup/resotre for seeding, and replication options to synchronize the data.
+If you want to manage the migration, review the general process:
 
-**Migration process**
+1. Planning. When you migrate workloads to cloud, especially from older generation of Power Systems to newer generations, system configuration planning is important. For more information on migration planning, see [Planning a workload migration to IBM® Power® Virtual Server](https://www.ibm.com/docs/en/power-virtual-server?topic=strategies-planning-workload-migration-power-virtual-server) and [Hints and Tips](https://www.ibm.com/downloads/documents/us-en/10a99803f32fd7bd) for migration.
+1. Network setup. Choose the network setup for the migration. Direct Link is preferred, especially for large data size. For smaller data size, use VPN.
+1. Infrastructure setup. Provision the cloud infrastructure as the target of the workload migration.
+   * Use deployable architectures. {{site.data.keyword.cloud_notm}} deployable architecture is cloud automation for deploying a common architectural pattern that combines one or more cloud resources. It offers a modular, flexible foundation for businesses to build, deploy, and manage applications securely in the cloud. {{site.data.keyword.cloud_notm}} offers a few different flavors of [deployable architectures](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-automation-solution-overview) that provide an automated deployment method to create an isolated {{site.data.keyword.powerSys_notm}} workspace and connect it with {{site.data.keyword.cloud_notm}} services and public internet.
+   * For clients in regulated industries, follow the [{{site.data.keyword.cloud_notm}} Framework for Financial Services best practices](/docs/framework-financial-services?topic=framework-financial-services-best-practices).
+1.  Workload migration. Your workload migration options depend on your OS, applications, and databases. Consider the various factors mentioned previously.
+1.  Workload resiliency. {{site.data.keyword.cloud_notm}} offers various services to enhance resiliency.
+   * Choose a strategy for backup ([AIX](/docs/power-iaas?topic=power-iaas-backup-strategies), [IBM i](/docs/power-iaas?topic=power-iaas-backup-ibmi)) and [High Availability and Disaster Recovery for {{site.data.keyword.powerSys_notm}}](/docs/power-iaas?topic=power-iaas-ha-dr).
+1. Security and compliance. {{site.data.keyword.powerSys_notm}} provides programs and certifications that help you establish and strengthen compliance for a wide range of internationally recognized standards. For more information, see [Compliance certifications](/docs/power-iaas?topic=power-iaas-compliances-list).
 
-Depending on the skill sets, if client needs help from IBM for the migration, [IBM Technology Expert](https://www.ibm.com/products/expertlabs) Labs has service offerings available to asist you.
+Review the following scenarios you encounter in the migration process and the recommended approach.
 
-If client wants to manage the migration, here are the general process:
+| Scenario | Recommended approach |
+|----------|----------------------|
+| **Secure, high-bandwidth transfer** | Use **Direct Link** when possible. If unavailable, use VPN as an alternative. |
+| **Small data migrations (OS-level transfers)** | Use OS-native backup and restore tools. |
+| **Small data transfers** | Cloud Object Storage (COS) can be suitable. Use **Aspera** for faster, more efficient transfers when available. |
+| **Large data transfers** | Direct network transfers to {{site.data.keyword.powerSys_notm}} are preferred. Use Aspera when possible. |
+| **Very large data migrations** | Use deduplication tools, like FalconStor StorSafe VTL, to reduce data transfer volume. |
+| **Zero-downtime environments** | Combine backup and restore for initial seeding, followed by replication, to maintain data synchronization. |
+{: caption="Markdown coding for tables" caption-side="bottom"}
 
-* planning - When migrating workloads to cloud, especially from older generation of Power Systems to newer generations, good system configuration planning is important. [This IBM Cloud Doc page](https://www.ibm.com/docs/en/power-virtual-server?topic=strategies-planning-workload-migration-power-virtual-server) has information and various links that can help you with the migration planning. Make sure to check out the [Hints and Tips](https://www.ibm.com/downloads/documents/us-en/10a99803f32fd7bd) for migration.
-* Network setup - Choose the network setup for the migration. Direct Link is preferred, especially for large data size. For smaller data size, VPN is recommended.
-* Infrastructure setup - Provision the cloud infrastructure as the target of the workload migration.
-    * Deployable Architecture - IBM Cloud deployable architecture is cloud automation for deploying a common architectural pattern that combines one or more cloud resources. It offers a modular, flexible foundation for businesses to build, deploy, and manage applications securely in the cloud. IBM Cloud offers a few different flavors of [deployable architectures](https://cloud.ibm.com/docs/powervs-vpc?topic=powervs-vpc-automation-solution-overview) that provide an automated deployment method to create an isolated Power Virtual Server workspace and connect it with IBM Cloud services and public internet.
-    * For clients in regulated industries, it is recommended to follow these [best practices](https://cloud.ibm.com/docs/framework-financial-services?topic=framework-financial-services-best-practices) and recommendations.
- * Workload migration - There are many options for workload migration, and the choices are different for different OS, applications, and databases. Client should also consider the various factors discussed above. We will drill down into the details of workload migration in the following sections.
-* Workload resiliency - IBM Cloud provides various services, and client should choose strategies for backup ([AIX](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-backup-strategies), [IBM i](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-backup-ibmi)) and [High Availability (HA) and Disaster Recovery (DR)](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-ha-dr). IBM Cloud provides various services.
-* Security and compliance - The Power Virtual Server provides programs and certifications that help you establish and strengthen compliance for a wide range of internationally recognized standards. You can explore more details in [IBM Cloud Docs](https://cloud.ibm.com/docs/power-iaas?topic=power-iaas-compliances-list).
+## Using performance metrics to plan a migration
+{: #migration-perfmetrics}
+
+When you plan for migrations, understanding key performance metrics is crucial for making informed decisions for a smooth migration. Three primary metrics that you can use to evaluate the performance of {{site.data.keyword.IBM}} systems are Relative Performance (rPerf), Standard Performance Evaluation Corporation Java Business Benchmark 2015 (SPECjbb2015), and Commercial Processing Workload (CPW). These metrics help you compare your current system to future options, estimate performance needs, and ensure that the new environment can handle your workloads.
+
+rPerf
+:   rPerf is a benchmark that is used to estimate the performance of {{site.data.keyword.IBM}} Power Systems servers relative to a baseline system. This metric allows for straightforward comparison between different systems, helping to ensure that the new system can manage current workloads during migrations. You can find the latest {{site.data.keyword.IBM}} Power rPerf values in the [{{site.data.keyword.IBM}} Power Performance Report](https://www.ibm.com/downloads/documents/us-en/10c31775c5d40fed){: external}.
+
+SPECjbb2015
+:   SPECjbb2015 evaluates the performance of server-side Java applications, which is useful for Linux workloads on Power Systems. It measures throughput and response times, providing valuable insights into how well a system can handle Java-based applications, which is critical for capacity planning and system selection.
+
+CPW
+:   CPW measures the processing power of {{site.data.keyword.IBM}} i systems in terms of commercial transactions per second. This metric is essential for assessing the capacity that is needed for {{site.data.keyword.IBM}} i workloads, which helps you make sure that the target system can meet the expected load and future demands.
+
+These metrics are vital for planing your migrations as they offer standardized benchmarks to compare system performance. They also aid in capacity planning, cost-benefit analysis, and risk mitigation. Use key metrics to make sure that the new system meets performance requirements so that you can reduce downtime and maintain operational efficiency.
 
 ## Migrating AIX to {{site.data.keyword.cloud_notm}}
 {: #migrate-aix}
@@ -177,10 +194,10 @@ Other benefits include the following points:
 - Flexibility and scalability: Offers tailored backups for specific system components and scalable resources to meet changing workload demands, optimizing the migration process.
 - Enhanced data integrity and security: Maintains data integrity with accurate replication of the entire system and secure data transfer by using cloud storage.
 
-### Host and Operating System Mirroring using Geographic Logical Volume Manager (GLVM)
+### Host and OS mirroring by using Geographic Logical Volume Manager (GLVM)
 {: #host-GLVM}
 
-Migrating AIX workloads to {{site.data.keyword.powerSys_notm}} by using Host and OS System Mirroring with Geographic Logical Volume Manager (GLVM) ensures continuous data protection and high availability. GLVM replicates data at the logical volume level between on-premises systems and {{site.data.keyword.powerSys_notm}}, minimizing downtime and maintaining business continuity. PowerHA SystemMirror enhances this setup by automating management and monitoring. This method uses {{site.data.keyword.powerSys_notm}}'s scalable and high-performance infrastructure, providing efficient data replication and resource optimization while offering robust security through data encryption and isolated environments.
+Migrating AIX workloads to {{site.data.keyword.powerSys_notm}} by using Host and OS system mirroring with Geographic Logical Volume Manager (GLVM) helps ensure continuous data protection and high availability. GLVM replicates data at the logical volume level between on-premises systems and {{site.data.keyword.powerSys_notm}}, minimizing downtime and maintaining business continuity. PowerHA SystemMirror enhances this setup by automating management and monitoring. This method uses {{site.data.keyword.powerSys_notm}}'s scalable and high-performance infrastructure, providing efficient data replication and resource optimization while offering robust security through data encryption and isolated environments.
 
 This approach is cost-efficient, reduces infrastructure costs through a pay-as-you-go model and optimizes resource use. It provides robust disaster recovery solutions and ensures compliance with data protection regulations. The centralized control and simplified management that is offered by {{site.data.keyword.powerSys_notm}}, combined with the automated processes of PowerHA SystemMirror, make the migration process streamlined and reliable. This ensures that businesses can efficiently move their AIX workloads to the cloud, maximizing the benefits of cloud infrastructure while minimizing risks and costs.
 
@@ -217,8 +234,10 @@ Database replication
 Third-party replication software
 :   Migrating AIX workloads to {{site.data.keyword.powerSys_notm}} using third-party tools (like FalconStor, MIMIX, Double-Take) can streamline the process and reduce downtime, but there are important limitations to consider. Licensing and subscription costs for these tools can be significant, especially for small or budget-constrained projects. Setup and configuration often require specialized expertise, and vendors might have differing support models or integration complexity. These tools might introduce compatibility issues with specific AIX versions, storage layouts, or custom configurations. Sometimes, third-party tools add infrastructure costs or require agents that impact performance. Vendor lock-in can be a concern if ongoing replication or HA/DR functions depends on the samfunctionsigration. Finally, while these tools are great for minimizing downtime, they often need careful testing and validation to ensure data consistency and full system functions in the {{site.data.keyword.powerSys_notm}} environment.
 
-## Case study: Migrating AIX workloads to {{site.data.keyword.powerSys_notm}} with `mksysb` and `savevg`
+## AIX case study
 {: #aix-case-study}
+
+Migrating AIX workloads to {{site.data.keyword.powerSys_notm}} with `mksysb` and `savevg`.
 
 **Client overview:** XYZ Corporation, a mid-sized manufacturing company, relies heavily on AIX systems for its critical business operations, including ERP and supply chain management. With growing data needs and an aging on-premises infrastructure, XYZ Corporation decided to migrate their AIX workloads to {{site.data.keyword.powerSys_notm}} to leverage the cloud's scalability, performance, and cost efficiencies.
 
@@ -287,7 +306,7 @@ There are several options for migrating IBM i series from on-premises to {{site.
 * Application level replication, for example,   Db2, Oracle, SAP
 * Logical replication by using 3rd-party software, for example,  Mimix
 
-### Backup and migration using FalconStor VTL
+### Backup and migration by using FalconStor VTL
 {: #backup-falconstor}
 
 For images over 2 TB, use FalconStor Storsafe VTL appliances to deduplicate and minimize the data transfer to the cloud. Images less than 2 TB can be transferred to {{site.data.keyword.IBM}} {{site.data.keyword.cos_full_notm}} using {{site.data.keyword.IBM}} Backup, Recovery, and Media Services (BRMS) and {{site.data.keyword.cloud_notm}} Storage Solution (ICC) {{site.data.keyword.cloud_notm}} Direct Link is the preferred option, as it seamlessly connects on-premises resources to {{site.data.keyword.cloud_notm}}, and provides a consistent, high-throughput connectivity without using the public internet.
@@ -334,8 +353,10 @@ Application-level replication (Db2, Oracle, SAP)
 Logical replication with third-party software
 :   Migrating {{site.data.keyword.IBM}} i workloads to {{site.data.keyword.powerSys_notm}} by using logical replication with third-party software, such as Assure MIMIX, Rocket iCluster, or RobotHA, is a powerful strategy for achieving near-zero downtime, but it has several limitations. First, these tools typically require separate licensing and ongoing costs, which can be significant, especially for small to mid-sized environments. Logical replication is journal-based, meaning that it relies on proper journal configuration and object selection; if not set up correctly, critical objects or data might be missed. These tools replicate libraries, files, configurations, and user profiles, but often exclude some system-level objects like licensed programs or temporary system data. Also, the setup is technically complex and might require specialized expertise in both the software and {{site.data.keyword.IBM}} i internals. Successful failover and cutover require rigorous testing and monitoring, and while rollback is possible, it might not be as simple as with snapshot-based approaches. Finally, logical replication tools often introduce infrastructure costs and require stable, high-performance network connections between the source and target systems. Despite these challenges, this method is ideal for environments that require high availability and minimal disruption during migration.
 
-## Case Study: Migrating on-premises {{site.data.keyword.IBM}} i workloads to {{site.data.keyword.powerSys_notm}} with FalconStor VTL
+## {{site.data.keyword.IBM}} i case Study
 {: #migration-ibmi}
+
+Migrating on-premises {{site.data.keyword.IBM}} i workloads to {{site.data.keyword.powerSys_notm}} with FalconStor VTL.
 
 **Client overview:** LMN Healthcare, a medium-sized healthcare provider, relies on {{site.data.keyword.IBM}} i systems for critical applications such as patient management, billing, and electronic health records. To enhance scalability, performance, and reduce operational costs, LMN Healthcare decided to migrate their {{site.data.keyword.IBM}} i workloads from their on-premises data center to {{site.data.keyword.powerSys_notm}} (PowerVS).
 
@@ -389,22 +410,6 @@ By using FalconStor's StorSafe VTL, LMN Healthcare successfully migrated their {
 
 ![IBM i migration diagram using FalconStor method](/images/falconstormigration.svg "Reference Summary"){: caption="{{site.data.keyword.powerSysFull}} falconstor migration" caption-side="bottom"}{: external download="falconstormigration.svg"}
 
-## Using performance metrics to plan a migration
-{: #migration-perfmetrics}
-
-When you plan for migrations, understanding key performance metrics is crucial for making informed decisions for a smooth migration. Three primary metrics that you can use to evaluate the performance of {{site.data.keyword.IBM}} systems are Relative Performance (rPerf), Standard Performance Evaluation Corporation Java Business Benchmark 2015 (SPECjbb2015), and Commercial Processing Workload (CPW). These metrics help you compare your current system to future options, estimate performance needs, and ensure that the new environment can handle your workloads.
-
-rPerf
-:   rPerf is a benchmark that is used to estimate the performance of {{site.data.keyword.IBM}} Power Systems servers relative to a baseline system. This metric allows for straightforward comparison between different systems, helping to ensure that the new system can manage current workloads during migrations. You can find the latest {{site.data.keyword.IBM}} Power rPerf values in the [{{site.data.keyword.IBM}} Power Performance Report](https://www.ibm.com/downloads/documents/us-en/10c31775c5d40fed){: external}.
-
-SPECjbb2015
-:   SPECjbb2015 evaluates the performance of server-side Java applications, which is useful for Linux workloads on Power Systems. It measures throughput and response times, providing valuable insights into how well a system can handle Java-based applications, which is critical for capacity planning and system selection.
-
-CPW
-:   CPW measures the processing power of {{site.data.keyword.IBM}} i systems in terms of commercial transactions per second. This metric is essential for assessing the capacity that is needed for {{site.data.keyword.IBM}} i workloads, which helps you make sure that the target system can meet the expected load and future demands.
-
-These metrics are vital for planing your migrations as they offer standardized benchmarks to compare system performance. They also aid in capacity planning, cost-benefit analysis, and risk mitigation. Use key metrics to make sure that the new system meets performance requirements so that you can reduce downtime and maintain operational efficiency.
-
 ## Summary
 {: #summary}
 
@@ -417,4 +422,4 @@ Migrating on-premises {{site.data.keyword.IBM}} Power workloads to {{site.data.k
  * [Migration strategies for AIX](/docs/power-iaas?topic=power-iaas-migration-aix){: external}
  * [Migration strategies for {{site.data.keyword.IBM}} i](/docs/power-iaas?topic=power-iaas-migration-strategies-power){: external}
  * [Additional migration strategies](/docs/power-iaas?topic=power-iaas-additional-migration-strategies-power){: external}
- * [IBM Power Virtual Server Guide for IBM AIX and Linux](https://www.redbooks.ibm.com/redpieces/pdfs/sg248512.pdf){: external}
+ * [IBM {{site.data.keyword.powerSys_notm}} Guide for IBM AIX and Linux](https://www.redbooks.ibm.com/redpieces/pdfs/sg248512.pdf){: external}
