@@ -16,7 +16,7 @@ subcollection: powervs-migration
 # Migrating to {{site.data.keyword.powerSys_notm}} on {{site.data.keyword.cloud_notm}}
 {: #white-paper}
 
-This white paper describes the business challenges with on-premises and colocated Power workloads and offers prescriptive solutions for migrating to {{site.data.keyword.IBM}} {{site.data.keyword.powerSysFull}}. It covers key design considerations and migration strategies to guide your transition with actionable steps.
+This white paper describes the business challenges with on-premises and colocated Power workloads and offers prescriptive solutions for migrating to {{site.data.keyword.powerSysFull}}. It covers key design considerations and migration strategies to guide your transition with actionable steps.
 {: shortdesc}
 
 Organizations are turning to cloud solutions to enhance scalability, reduce costs, and improve flexibility. {{site.data.keyword.IBM}} {{site.data.keyword.powerSys_notm}} offers a robust platform for running {{site.data.keyword.IBM}} AIX and {{site.data.keyword.IBM}} i workloads with the benefits of cloud infrastructure.
