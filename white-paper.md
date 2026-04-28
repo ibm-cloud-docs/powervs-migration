@@ -1,8 +1,8 @@
 ---
 
 copyright:
-  years: 2025
-lastupdated: "2025-03-28"
+  years: 2026
+lastupdated: "2026-04-28"
 
 keywords:
 
@@ -71,7 +71,7 @@ Cost-effective OpEx model
 :   With a flexible pay-as-you-go model, the client pays only for what they use. Pay-as-you-go applies not only to the {{site.data.keyword.powerSys_notm}} compute, but also to the storage. You can move from expensive on-premises storage to scalable cloud storage models. You can replace Tape with {{site.data.keyword.cos_full_notm}}, SAN with cloud block and file storage, or use vSAN in the [VMware Software Defined Data Center (SDDC)](/docs/vmware?topic=vmware-vmware-sddc-on-ibm-cloud) model on cloud bare metal servers.
 
 Smooth migration to the cloud
-:   {{site.data.keyword.powerSys_notm}} has the same architecture in a cloud environment as {{site.data.keyword.IBM}} Power on-premises. It supports AIX, {{site.data.keyword.IBM}} i, Linux, and Red Hat OpenShift, and is certified for SAP and Oracle workloads, allowing a smooth migration for businesses already by using {{site.data.keyword.IBM}} Power Systems to cloud.
+:   {{site.data.keyword.powerSys_notm}} has the same architecture in a cloud environment as {{site.data.keyword.IBM}} Power on-premises. It supports AIX, {{site.data.keyword.IBM}} i, Linux, and Red Hat OpenShift, and is certified for SAP and Oracle workloads, allowing a smooth migration for businesses already using {{site.data.keyword.IBM}} Power Systems to the cloud.
 
 Improved platform availability
 :   The accelerated shift to a digital economy, partly due to the Covid pandemic, along with increased business demand for higher availability of production-critical applications, requires greater platform availability of 99.99+%. For more information about platform availability, see the [{{site.data.keyword.cloud_notm}} service level objectives](/docs/resiliency?topic=resiliency-slo).
@@ -128,6 +128,8 @@ If you want to manage the migration, review the general process:
 1.  Workload resiliency. {{site.data.keyword.cloud_notm}} offers various services to enhance resiliency.
    * Choose a strategy for backup ([AIX](/docs/power-iaas?topic=power-iaas-backup-strategies), [IBM i](/docs/power-iaas?topic=power-iaas-backup-ibmi)) and [High Availability and Disaster Recovery for {{site.data.keyword.powerSys_notm}}](/docs/power-iaas?topic=power-iaas-ha-dr).
 1. Security and compliance. {{site.data.keyword.powerSys_notm}} provides programs and certifications that help you establish and strengthen compliance for a wide range of internationally recognized standards. For more information, see [Compliance certifications](/docs/power-iaas?topic=power-iaas-compliances-list).
+
+Depending on the skill sets, if client needs help from IBM for the migration, [IBM Technology Expert](https://www.ibm.com/products/expertlabs) Labs has service offerings available to assist you.
 
 Review the following key factors related to your workloads during migration and the recommended approaches for each.
 
@@ -232,7 +234,7 @@ Database replication
    Overall, while database replication is ideal for scenarios where data availability is critical and application layers can be rebuilt or reinstalled separately, it is less suitable for full-stack system migrations or when an identical environment is required in {{site.data.keyword.powerSys_notm}}. Proper planning, testing, and coordination are essential to avoid surprises during migration.
 
 Third-party replication software
-:   Migrating AIX workloads to {{site.data.keyword.powerSys_notm}} using third-party tools (like FalconStor, MIMIX, Double-Take) can streamline the process and reduce downtime, but there are important limitations to consider. Licensing and subscription costs for these tools can be significant, especially for small or budget-constrained projects. Setup and configuration often require specialized expertise, and vendors might have differing support models or integration complexity. These tools might introduce compatibility issues with specific AIX versions, storage layouts, or custom configurations. Sometimes, third-party tools add infrastructure costs or require agents that impact performance. Vendor lock-in can be a concern if ongoing replication or HA/DR functions depends on the samfunctionsigration. Finally, while these tools are great for minimizing downtime, they often need careful testing and validation to ensure data consistency and full system functions in the {{site.data.keyword.powerSys_notm}} environment.
+:   Migrating AIX workloads to {{site.data.keyword.powerSys_notm}} using third-party tools (like FalconStor, MIMIX, Double-Take) can streamline the process and reduce downtime, but there are important limitations to consider. Licensing and subscription costs for these tools can be significant, especially for small or budget-constrained projects. Setup and configuration often require specialized expertise, and vendors might have differing support models or integration complexity. These tools might introduce compatibility issues with specific AIX versions, storage layouts, or custom configurations. Sometimes, third-party tools add infrastructure costs or require agents that impact performance. Vendor lock-in can be a concern if ongoing replication or HA/DR functions depend on the same migration tool. Finally, while these tools are great for minimizing downtime, they often need careful testing and validation to ensure data consistency and full system functions in the {{site.data.keyword.powerSys_notm}} environment.
 
 ## AIX case study
 {: #aix-case-study}
@@ -323,7 +325,7 @@ The GO SAVE command includes multiple options, three of which are discussed in t
 
 Geographic mirroring can be utilized to migrate a host and operating system from an on-premises location to {{site.data.keyword.powerSys_notm}} in {{site.data.keyword.cloud_notm}}. Geographic mirroring occurs when all data in one environment is mirrored to a second location.  There is both a synchronous and asynchronous version of geographic mirroring. Synchronous geographic mirroring over a distance might impact application performance due to communication latency.
 
-![Geographic mirror](/images/geomirror.svg "Reference Summary"){: caption="{{site.data.keyword.powerSysFull}} Geopgraphic Mirror" caption-side="bottom"}{: external download="geomirror.svg"}
+![Geographic mirror](/images/geomirror.svg "Reference Summary"){: caption="{{site.data.keyword.powerSysFull}} Geographic Mirror" caption-side="bottom"}{: external download="geomirror.svg"}
 
 ### Application-level replication
 {: #app-replication}
